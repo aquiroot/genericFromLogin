@@ -7,7 +7,7 @@
 	--text-icons: #ffffff;
 	--accent: #536dfe;
 	--primary-text: #212121;
-	--secondari-text: #757575;
+	--secondary-text: #757575;
 	--divider: #bdbdbd;
 }
 
@@ -28,45 +28,62 @@ body {
 h1 {
 	font-size: 26px;
 	color: var(--primary-text);
-	margin: 100px 0 50px 0;
+	margin: 70px 0 50px 0;
 }
 
 img:first-child {
+	margin-top: 20px;
 	width: 180px;
 }
 
 input {
 	border: 2px var(--primary) solid;
-	color: var(--secondari-text);
+	color: var(--secondary-text);
 	border-radius: 4px;
 	padding: 5px 10px 5px 10px;
 	margin-bottom: 20px;
 	font-size: 16px;
+	width: 85%;
 	height: 25px;
 	display: inline-block;
 }
 
 button {
-	border: 2px var(--primary) solid;
+	border: 2px var(--accent) solid;
+	color: var(--accent);
 	border-radius: 4px;
+	margin: 20px 0 60px 0;
 	padding: 5px 10px 5px 10px;
 	background-color: white;
 	cursor: pointer;
 	display: block;
+	width: 90%;
 	height: 45px;
 	font-size: 16px;
 }
 
 button:hover {
-	background-color: var(--primary);
+	background-color: var(--accent);
 	color: var(--text-icons);
 	transition: 0.1s;
 }
 
 .container {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.bar {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.bar span {
+	color: var(--text-icons);
 }
 
 .card {
@@ -74,12 +91,91 @@ button:hover {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-top: 150px;
-	padding: 20px;
-	width: 350px;
-	height: 600px;
+	margin-top: 100px;
+	padding: 20px 20px 5px 20px;
+	max-width: 300px;
+	max-height: 600px;
 	border: 2px var(--primary) solid;
 	border-radius: 6px;
 	box-shadow: 0px 0px 40px -2px var(--primary-text);
 	background-color: white;
+}
+
+a {
+	margin: 10px;
+	font-size: 14px;
+	color: var(--secondary-text);
+}
+
+a:hover {
+	color: var(--primary-text);
+	transition: 0.1s;
+}
+
+hr {
+	border-top: 1px solid var(--divider);
+	width: 90%;
+}
+
+.switch {
+	margin: 20px;
+	float: right;
+	position: relative;
+	width: 50px;
+	height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--light-primary);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: '';
+	height: 18px;
+	width: 18px;
+	left: 3px;
+	bottom: 3px;
+	background-color: var(--text-icons);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .slider {
+	background-color: var(--dark-primary);
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px var(--dark-primary);
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
 }
