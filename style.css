@@ -1,13 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
+:root {
+	--dark-primary: #512da8;
+	--light-primary: #d1c4e9;
+	--primary: #673ab7;
+	--text-icons: #ffffff;
+	--accent: #536dfe;
+	--primary-text: #212121;
+	--secondari-text: #757575;
+	--divider: #bdbdbd;
+}
+
 * {
 	margin: 0;
 	padding: 0;
-}
-
-:root {
+	text-decoration: none;
+	border: none;
 }
 
 body {
+	width: 100vw;
+	height: 100vh;
 	font-family: 'Gugi', cursive;
+}
+
+h1 {
+	font-size: 20px;
+	color: var(--primary-text);
+}
+
+img:first-child {
+	width: 150px;
+}
+
+input {
+	border: 2px var(--primary) solid;
+	border-radius: 4px;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 200px;
+	width: 350px;
+	height: 600px;
+	border: 2px var(--primary) solid;
+	border-radius: 10px;
+	box-shadow: 0px 0px 40px -10px var(--primary-text);
 }
